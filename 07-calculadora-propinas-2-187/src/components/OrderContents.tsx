@@ -1,12 +1,17 @@
-import { MenuItem, OrderItem } from '../types'
+import { OrderItem } from '../types'
 import { formatCurrency } from '../helpers';
+import { Dispatch } from 'react';
+import { OrderActions } from '../reducers/order-reducer';
 
 type OrderContentsProps = {
     order: OrderItem[];
-    removeItem: (id: MenuItem['id']) => void
+    // removeItem: (id: MenuItem['id']) => void
+    // Establece el type para dispatch
+    dispatch: Dispatch<OrderActions>
 }
 
-export default function OrderContents({ order, removeItem }: OrderContentsProps) {
+// Recibe dispatch en lugar de removeItem
+export default function OrderContents({ order, dispatch }: OrderContentsProps) {
     return (
         <div>
             <h2 className='font-black text-4xl'>Consumo</h2>
@@ -28,13 +33,18 @@ export default function OrderContents({ order, removeItem }: OrderContentsProps)
                             </div>
 
                             <button className='bg-red-600 h-8 w-8 rounded-full text-white'
-                                onClick={() => removeItem(item.id)}
+                                // onClick={() => removeItem(item.id)}
+                                // Llama a la acción remove-item y pasa el id como payload
+                                onClick={() => dispatch({
+                                    type: 'remove-item',
+                                    payload: { id: item.id }
+                                })}
+                            // Ahora puedes eliminar elementos de la orden
                             >
                                 X
                             </button>
                         </div>
                     ))
-                    // )
                 }
             </div>
         </div>
