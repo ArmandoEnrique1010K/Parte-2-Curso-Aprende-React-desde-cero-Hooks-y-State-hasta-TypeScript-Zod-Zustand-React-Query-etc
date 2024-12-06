@@ -20,11 +20,19 @@ function App() {
         {isValidBudget ? <BudgetTracker /> : <BudgetForm />}
       </div>
 
+      {/* Aqui se renderiza el modal, en el navegador, ese componente retorna un botón de signo más en la parte inferior derecha de la aplicación web */}
+
+      {/* Coloca una condición si se ha escrito un presupuesto valido, muestre el botón. El operador && sirve para un ternario simplificado, solamente si no se tiene nada para una condición que es falsa */}
       {isValidBudget && (
+        // Se colocan unas clases para el contenedor del modal
         <main className="max-w-3xl mx-auto py-10">
+          {/* Los estilos no van a afectar al modal porque tiene la clase position:fixed */}
           <ExpenseModal />
         </main>
       )}
+
+      {/* Escribe un presupuesto, pulsa el botón "Definir presupuesto" y muestra el botón de signo + */}
+
     </>
   )
 }
