@@ -5,25 +5,20 @@ export type BudgetActions =
     { type: 'add-budget', payload: { budget: number } } |
     { type: 'show-modal' } |
     { type: 'close-modal' } |
-    { type: 'add-expense', payload: { expense: DraftExpense } } |
-    { type: 'remove-expense', payload: { id: Expense['id'] } }
-    // Añade un nuevo type para obtener la factura por su id
-    | { type: 'get-expense-by-id', payload: { id: Expense['id'] } }
+    { type: 'add-expense', payload: { expense: DraftExpense } }
+    // Añade un type para la acción de eliminar, como payload requiere el id del type Expense
+    | { type: 'remove-expense', payload: { id: Expense['id'] } }
 
 export type BudgetState = {
     budget: number
     modal: boolean
     expenses: Expense[]
-    // Añade una nueva propiedad para seleccionar el id a editar
-    editingId: Expense['id']
 }
 
 export const initialState: BudgetState = {
     budget: 0,
     modal: false,
-    expenses: [],
-    // El valor inicial es un string vacio
-    editingId: ''
+    expenses: []
 }
 
 const createExpense = (draftExpense: DraftExpense): Expense => {
@@ -71,21 +66,15 @@ export const budgetReducer = (
         }
     }
 
+    // Crea la acción para eliminar el gasto
     if (action.type === 'remove-expense') {
         return {
             ...state,
+            // Filtra todos los gastos a excepción del gasto cuyo id coincida con el del payload recibido
             expenses: state.expenses.filter(expense => expense.id !== action.payload.id)
         }
     }
 
-    // Acción para seleccionar un gasto por id
-    if (action.type === 'get-expense-by-id') {
-        return {
-            ...state,
-            // Escribe el id recibido como payload en el state de editingId
-            editingId: action.payload.id
-        }
-    }
     return state;
 }
 

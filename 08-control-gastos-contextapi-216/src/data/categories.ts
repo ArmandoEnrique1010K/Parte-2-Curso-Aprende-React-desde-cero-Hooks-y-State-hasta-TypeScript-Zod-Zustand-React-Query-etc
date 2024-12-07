@@ -1,6 +1,7 @@
 import { Category } from "../types";
 
 export const categories: Category[] = [
+    // Recuerda que se tiene este arreglo de categorias, contiene el id, nombre y nombre del icono (se encuentran en la carpeta public)
     { id: '1', name: 'Ahorro', icon: 'ahorro' },
     { id: '2', name: 'Comida', icon: 'comida' },
     { id: '3', name: 'Casa', icon: 'casa' },
