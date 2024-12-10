@@ -1,0 +1,45 @@
+/* Aplica el mismo estilo para que los elementos <input> y <label> queden separados horizontalmente */
+.form,
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Para aplicarle estilos al elemento <input> de tipo text, puedes hacer lo siguiente*/
+.form input[type="text"],
+/* Tambien aplica estilos al elemento select */
+.form select {
+    padding: 1rem;
+    background-color: transparent;
+    /* Borde: tamaño, tipo y color */
+    border: .3rem solid var(--white);
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 400;
+    border-radius: 1rem
+}
+
+/* Para que las opciones no aparezcan en blanco se realiza lo siguiente */
+.form select option {
+    background-color: white;
+    color: black;
+}
+
+/* Aplica estilos al texto contenido en el atributo placeholder */
+.field ::placeholder {
+    color: var(--white)
+}
+
+/* Estilos para el botón */
+.submit {
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    /* Tipo de cursor cuando se posiciona en el elemento que lleva esta clase */
+    cursor: pointer;
+    padding: 1rem;
+}

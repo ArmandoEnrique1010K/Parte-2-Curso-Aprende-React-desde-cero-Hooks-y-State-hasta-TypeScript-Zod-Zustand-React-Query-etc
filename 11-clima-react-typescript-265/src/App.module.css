@@ -1,0 +1,28 @@
+/* Se utilizan clases y no nombres de etiquetas HTML */
+.title {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 5rem;
+}
+
+.container {
+    /* Ancho del elemento */
+    width: 95%;
+    max-width: 100rem;
+    /* Centra horizontalmente */
+    margin: 0 auto
+}
+
+/* Media queries (diseño responsivo) */
+@media (min-width: 768px) {
+    .container {
+        /* Si el ancho es mayor que 768px, aplica 2 columnas */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* Centra horizontalmente */
+        align-items: center;
+        /* Espaciado entre las columnas */
+        gap: 4rem;
+        margin-top: 5rem;
+    }
+}

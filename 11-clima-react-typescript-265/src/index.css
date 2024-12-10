@@ -1,0 +1,25 @@
+/* Define las clases CSS globales como variables */
+:root {
+    --white: #FFF;
+    --primary: #F59E0B
+}
+
+html {
+    /* Encoge el tamaño de fuente predeterminado */
+    font-size: 62.5%;
+}
+
+/* Estilos globales */
+body {
+    /* En Google Fonts, se encuentra el codigo para utilizar la fuente outfit */
+    font-family: "Outfit", serif;
+    /* Imagen de fondo, la ruta es desde la carpeta public */
+    background-image: url('/bg_clima.jpg');
+    /* Especifica si la imagen va a ocupar todo el elemento y que no se repita en ambos ejes */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* Texto */
+    font-size: 2em;
+    color: var(--white)
+}
