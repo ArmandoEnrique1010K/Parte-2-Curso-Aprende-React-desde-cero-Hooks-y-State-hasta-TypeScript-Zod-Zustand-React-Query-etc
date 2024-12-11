@@ -1,0 +1,33 @@
+/* Estilo para el contenedor general del componente */
+.container {
+    background-color: var(--white);
+    color: #000;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Estilos para la temperatura actual */
+.current {
+    font-size: 6rem;
+    font-weight: 900;
+    /* Como los parrafos tienen una separación se utiliza lo siguiente para quitar la separación */
+    margin: 0;
+}
+
+/* Contenedor de temperatura minima y maxima */
+.temperatures {
+    display: flex;
+    justify-content: center;
+    /* Espaciado entre los elementos hijos */
+    gap: 5rem;
+}
+
+/* Estilos a los elementos p y span del contenedor temperatures */
+.temperatures p {
+    font-weight: 900;
+}
+
+.temperatures span {
+    font-weight: 400;
+}
