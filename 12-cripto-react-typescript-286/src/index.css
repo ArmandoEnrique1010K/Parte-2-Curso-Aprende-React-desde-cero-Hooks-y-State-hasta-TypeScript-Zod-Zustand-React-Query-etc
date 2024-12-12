@@ -1,0 +1,106 @@
+/* Contiene las variables CSS */
+:root {
+    --white: #fff;
+    --primary: #61ECBC;
+    --black: #182339
+}
+
+html {
+    /* Permite trabajar con unidades REMs al mismo tamaño que pixeles, los rems hace que el codigo se adapte a diferentes resoluciones */
+    font-size: 62.5%;
+}
+
+body {
+    /* Imagen de fondo */
+    /* background-image: url('/public/bg.jpg'); */
+    background-image: url('/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Altura minima, toda la pantalla */
+    min-height: 100vh;
+    /* Aplica el tipo de fuente de google fonts a todo el elemento <body> */
+    font-family: 'Outfit', sans-serif;
+    /* Tamaño de texto por defecto */
+    font-size: 2rem;
+}
+
+.container {
+    /* Centra el contenido de la aplicación */
+    max-width: 60rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* Estilos para el titulo */
+.app-title {
+    font-size: 3.8rem;
+    margin-top: 5rem;
+    color: var(--white);
+    /* Interlineado del elemento*/
+    line-height: .8;
+}
+
+/* Palabra Criptomonedas */
+.app-title span {
+    display: block;
+    color: var(--primary);
+    font-size: 4.4rem;
+}
+
+.content {
+    margin-top: 5rem;
+    padding: 6rem 2rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    /* Aplica sombreado al elemento, el siguiente enlace contiene distintos modelos de sombreado. 
+    
+    https: //getcssscan.com/css-box-shadow-examples
+
+    En este caso, haz clic en el recuadro #9 para copiar el siguiente codigo CSS */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    ;
+}
+
+/* Estilos para el formulario y sus campos */
+.form,
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Nombre del campo */
+.form label {
+    color: var(--black);
+}
+
+.form select {
+    background-color: #ECEBEB;
+    /* La mayoria de elementos HTML de un formulario no tienen bordes */
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    /* Agranda el texto */
+    font-size: 1.8rem;
+}
+
+/* Aplica al elemento que contenga el siguiente atributo y valor (el boton de enviar) */
+.form [type="submit"] {
+    background-color: var(--primary);
+    color: var(--black);
+    border: none;
+    padding: 1rem;
+    font-weight: 900;
+    /* Cambia el cursor cuando se coloca sobre el elemento */
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    /* Aplica una transición, cambia el color de fondo durante 300 milisegundos con un efecto ease */
+    transition: background-color 300ms ease;
+}
+
+/* Evento o pseudoclase hover, aplica estos estilos cuando el usuario se coloca sobre el botón */
+.form [type="submit"]:hover {
+    background-color: #0CB387;
+}
